@@ -1,0 +1,2 @@
+[debug] Subclass fingerprints: List((junit.framework.TestCase,false,sbt.SubclassFingerprintWrapper@32f6a979))
+[debug] Annotation fingerprints: List((org.junit.Test,false,sbt.AnnotatedFingerprintWrapper@36d27236), (org.junit.runner.RunWith,false,sbt.AnnotatedFingerprintWrapper@3168b8f4))
