@@ -1,5 +1,7 @@
 package Ch1;
 
+import InMemoryAkkaDB.AkkaDbActor;
+import InMemoryAkkaDB.messages.Set;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
@@ -16,12 +18,12 @@ public class MyAkkaDbTest {
 
     @Test
     public void itShouldPlaceKeyValueFromMessageToMap(){
-        TestActorRef<MyAkkaDb> testActorRef = TestActorRef.create(actorSystem, Props.create(MyAkkaDb.class));
-        testActorRef.tell(new SetRequest("Key","Value"), ActorRef.noSender());
+        TestActorRef<AkkaDbActor> testActorRef = TestActorRef.create(actorSystem, Props.create(AkkaDbActor.class));
+        testActorRef.tell(new Set("Key","Value"), ActorRef.noSender());
 
-        MyAkkaDb myAkkaDb =   testActorRef.underlyingActor();
+        AkkaDbActor myAkkaDb =   testActorRef.underlyingActor();
 
-        Assert.assertEquals(myAkkaDb.map.get("Key"),"Value");
+        Assert.assertEquals(myAkkaDb.getMap().get("Key"),"Value");
 
 
 

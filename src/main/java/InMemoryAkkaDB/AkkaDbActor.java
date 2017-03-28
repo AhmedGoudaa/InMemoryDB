@@ -4,6 +4,7 @@ import InMemoryAkkaDB.messages.Get;
 import InMemoryAkkaDB.messages.NotFound;
 import InMemoryAkkaDB.messages.Set;
 import akka.actor.AbstractActor;
+import akka.actor.Props;
 import akka.actor.Status;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
@@ -20,7 +21,7 @@ public class AkkaDbActor extends AbstractActor {
 
     private final LoggingAdapter loggingAdapter = Logging.getLogger(context().system(),this);
 
-    private final Map<String,Object> map = new HashMap<>();
+    protected final Map<String,Object> map = new HashMap<>();
 
     ///
     // define pattern matching for messages received and return PartialFunction<Object,BoxedUnit>
@@ -58,9 +59,13 @@ public class AkkaDbActor extends AbstractActor {
     }
 
 
+    public static Props props(){
+        return Props.create(AkkaDbActor.class);
+    }
 
+    public Map<String,Object> getMap(){
+        return map;
 
-
-
+    }
 
 }

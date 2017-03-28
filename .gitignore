@@ -1,7 +1,6 @@
 target
 project/project
 project/target
-src/main/resources/
 src/main/scala-2.12/
 src/main/scala/
 src/test/resources/
