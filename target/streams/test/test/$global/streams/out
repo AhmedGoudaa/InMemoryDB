@@ -1,5 +1,0 @@
-[debug] Running TaskDef(Ch1.MyAkkaDbTest, sbt.AnnotatedFingerprintWrapper@36d27236, false, [SuiteSelector])
-[debug] Summary for JUnit not available.
-[info] Passed: Total 1, Failed 0, Errors 0, Passed 1
-[debug] Passed tests:
-[debug] 	Ch1.MyAkkaDbTest
